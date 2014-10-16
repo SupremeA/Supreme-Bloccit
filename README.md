@@ -12,10 +12,10 @@ Lord Bless this endeavor!
 
 #http://supremea-bloccit.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-SETUP-
 
-Things you may want to cover:
+config/application.yml = holds actual keys to variables
+config/application.example.yml = shows key variables
 
 * Ruby version
 

@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 1.2'
 
 #gem to authenticate users
 gem 'devise'
+#gem to protect sensitive data
+gem 'figaro', '1.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
