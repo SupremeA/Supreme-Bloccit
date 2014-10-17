@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 #gem to protect sensitive data
 gem 'figaro', '1.0'
+#gem to establish access level of different users
+gem 'pundit'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
