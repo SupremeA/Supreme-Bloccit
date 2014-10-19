@@ -1,9 +1,5 @@
 Bloccit::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-# production mailer settings
-config.action_mailer.default_url_options = { host: 'supremea-bloccit.herokuapp.com/'}
-end
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -44,7 +40,7 @@ end
 
   # config.force_ssl = true
   config.force_ssl = true
-  
+
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
@@ -82,4 +78,6 @@ end
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  # production mailer settings
+  config.action_mailer.default_url_options = { host: 'supremea-bloccit.herokuapp.com'}
 end
