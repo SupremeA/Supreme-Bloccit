@@ -4,7 +4,7 @@
 
 ## Bloccit: a Reddit clone to teach the fundamentals of web development and Rails 4.
 
-Made with my mentor at [Bloc](http://bloc.io).
+Made with my mentor [ELAD] at [Bloc](http://bloc.io).
 
 This is my first app in what I plan to be a long line of creative apps
 that help individuals, families, and communities move ahead in the world!
