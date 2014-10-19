@@ -1,6 +1,9 @@
 Bloccit::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+# production mailer settings
+config.action_mailer.default_url_options = { host: 'supremea-bloccit.herokuapp.com/'}
+end
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -39,7 +42,9 @@ Bloccit::Application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  # config.force_ssl = true
+  config.force_ssl = true
+  
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
