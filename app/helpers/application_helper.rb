@@ -8,6 +8,13 @@ module ApplicationHelper
     end
   end
 
+  def markdown(text)
+    render = Redcarpet::Render::HTML.new
+    extensions = {fenced_code_blocks: true}
+    redcarpet = Redcarpet::Markdown.new(render, extensions)
+    (redcarpet.render text).html_safe
+  end
+
   def my_name
     p 'SupremeA'
   end

@@ -40,6 +40,8 @@ gem 'devise'
 gem 'figaro', '1.0'
 #gem to establish access level of different users
 gem 'pundit'
+#gem to add markdown formatting
+gem 'redcarpet'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
