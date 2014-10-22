@@ -42,6 +42,10 @@ gem 'figaro', '1.0'
 gem 'pundit'
 #gem to add markdown formatting
 gem 'redcarpet'
+#image software
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
