@@ -8,6 +8,11 @@
        <%= @post.user.name %>
      </small>
     <p><%= markdown @post.body %></p>
+    <small>
+       <%= image_tag(@post.user.image.thumb.url) if @post.user.image? %>
+       submitted <%= time_ago_in_words(@post.created_at) %> ago by
+       <%= @post.user.name %>
+     </small>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
