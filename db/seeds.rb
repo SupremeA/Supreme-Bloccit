@@ -30,14 +30,23 @@ topics = Topic.all
   body:  Faker::Lorem.paragraph
   )
 end
-posts = Post.all
 
+#create comments
+Comment.create!(
+user: users.sample,
+body: Faker::Lorem.sentence
+)
+end
+
+posts = Post.all
 400.times do
   Comment.create!(
   post: posts.sample,
   body: Faker::Lorem.paragraph
   )
 end
+
+
 
 puts "Seed finished"
 puts "#{Post.count} post created"
