@@ -36,7 +36,6 @@ Comment.create!(
 user: users.sample,
 body: Faker::Lorem.sentence
 )
-end
 
 posts = Post.all
 400.times do
