@@ -1,9 +1,8 @@
-<%= form_for [topic, post, comment] do |f| %>
-  <%= form_group_tag(comment.new[:comment]) do %>
-      <%= f.label :comment %>
-      <%= f.text_area :comment, rows: 2, class: 'form-control', placeholder: "Enter comment" %>
+<% if current_user %>
+<h4> Give us your thoughts!</h4>
+  <%= form_for [topic, post, comment] do |f| %>
+      <%= f.label :body %>
+      <%= f.text_field :body, rows: 2, class: 'form-control', placeholder: "Enter comment" %>
+      <%= f.submit %>
   <% end %>
-    <div class="form-group">
-      <%= f.submit "Post", class: 'btn btn-success' %>
-    </div>
-  <% end %>
+<% end %>
