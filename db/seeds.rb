@@ -41,7 +41,8 @@ posts = Post.all
 400.times do
   Comment.create!(
   post: posts.sample,
-  body: Faker::Lorem.paragraph
+  body: Faker::Lorem.paragraph,
+  user_id: User.all.sample.id
   )
 end
 
