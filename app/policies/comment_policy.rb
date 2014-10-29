@@ -1,9 +1,4 @@
-class PostPolicy < ApplicationPolicy
-
-  def index?
-    true
-  end
-
+class CommentPolicy < AplicationPolicy
   def destroy?
     user.present? && (record.user == user || user.admin? || user.moderator?)
   end
