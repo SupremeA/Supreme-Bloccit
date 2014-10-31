@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     authorize @post
   end
 
-  before_filter :configure_permitted_parameters
+
 
   def update
      @topic = Topic.find(params[:topic_id])
@@ -71,13 +71,4 @@ end
    def post_params
      params.require(:post).permit(:title, :body, :image)
    end
-
-   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:name, :body, :image)
-    end
-    def devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :body, :image)
-    end
-  end
 end
