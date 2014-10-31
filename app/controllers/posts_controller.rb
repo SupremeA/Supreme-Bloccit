@@ -34,12 +34,15 @@ class PostsController < ApplicationController
     authorize @post
   end
 
+  before_filter :configure_permitted_parameters
+
   def update
      @topic = Topic.find(params[:topic_id])
      @post = Post.find(params[:id])
+
      authorize @post
 
-     if @post.update_attributes(post_params)
+     if @post.update(post_params)
        flash[:notice] = "Ok! That post was good so I updated it for you."
        redirect_to [@topic, @post]
      else
@@ -62,9 +65,19 @@ def destroy
     render :show
   end
 end
+
    private
 
    def post_params
      params.require(:post).permit(:title, :body, :image)
    end
+
+   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:name, :body, :image)
+    end
+    def devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:name, :body, :image)
+    end
+  end
 end

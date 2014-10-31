@@ -15,7 +15,7 @@
 /log/*.log
 /tmp
 
-# Carrierwave image
+# Ignore Carrierwave image
 public/uploads
 
 # Ignore environment variables

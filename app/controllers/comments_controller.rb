@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment was removed."
       redirect_to [@topic, @post]
     else
-      flash[:notice] = "Comment was not deleted, please try again!"
+      flash[:error] = "Comment was not deleted, please try again!"
       redirect_to [@topic, @post]
     end
   end

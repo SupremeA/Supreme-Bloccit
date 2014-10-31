@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 1.2'
 
 #gem to authenticate users
 gem 'devise'
+
 #gem to protect sensitive data
 gem 'figaro', '1.0'
 #gem to establish access level of different users

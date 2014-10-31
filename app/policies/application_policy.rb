@@ -38,16 +38,9 @@ class ApplicationPolicy
     record.class
   end
 
-  class Scope
-    attr_reader :user, :scope
+  private
 
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      scope
-    end
+  def can_moderate?(user, record)
+    (record.user == user || user.admin? || user.moderator?)
   end
 end
