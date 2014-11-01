@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.10'
 gem 'bootstrap-sass', '~> 3.1.1'
 
+# Rspec Testing Tools
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+end
+
 # Use sqlite3 as the database for Active Record
 group :production do
   gem 'pg'
