@@ -23,12 +23,16 @@ topics = Topic.all
 
 #create posts
 530.times do
-  Post.create!(
+  post = Post.create!(
   user:  users.sample,
   topic: topics.sample,
   title: Faker::Lorem.sentence,
   body:  Faker::Lorem.paragraph
   )
+
+  #sets the created_at time to within the past year
+  post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+  post.update_rank
 end
 
 #create comments
