@@ -17,4 +17,11 @@ module TestFactories
     user.save
     user
   end
+
+  def vote_presteps
+    request.env["HTTP_REFERER"] = '/'
+    @user = authenticated_user
+    @post = associated_post
+    sign_in @user
+  end
 end
