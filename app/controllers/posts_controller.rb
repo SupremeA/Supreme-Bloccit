@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       authorize @post
 
      if @post.save
+       @post.create_vote
        flash[:notice] = "POW! That awesome post was saved."
        redirect_to [@topic, @post]
      else
