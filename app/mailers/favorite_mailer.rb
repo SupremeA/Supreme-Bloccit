@@ -3,6 +3,7 @@ class FavoriteMailer < ActionMailer::Base
 
   def new_comment(user, post, comment)
 
+    # New Headers
     headers["Message-ID"] = "comments/#{comment.id}@supreme-bloccit.com>"
     headers["In-Reply-To"] = "<post/#{post.id}@supreme-bloccit.com>"
     headers["References"] = "<post/#{post.id}@supreme-bloccit.com>"
