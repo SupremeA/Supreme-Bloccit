@@ -33,8 +33,8 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 
-  private
-  
+  #private
+
   def create_vote
     user.votes.create(value: 1, post: self)
   end
