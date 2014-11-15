@@ -11,7 +11,7 @@ class Comment < ActiveRecord::Base
 
   def send_favorite_emails
     post.favorites.each do |favorite|
-      if favorite.user.present?
+      if favorites.present?
         FavoriteMailer.new_comment(favorite.user, topic.post, self).deliver
       end
     end
