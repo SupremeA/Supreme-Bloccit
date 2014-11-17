@@ -14,7 +14,7 @@
 
      describe "privately_viewable" do
        it "returns a relation of all private topics" do
-         expect(Topic.privately_viewable).to eq( [@topic] )
+         expect(Topic.privately_viewable).to eq( [@private_topic])
        end
      end
 
@@ -26,7 +26,7 @@
 
        it "returns only public topics if user is nil" do
          user = nil
-         expect(Topic.publicly_viewable).to eq( [@public_topic] )
+         expect(Topic.visible_to).to eq( @public_topic )
        end
      end
    end

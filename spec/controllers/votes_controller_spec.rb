@@ -19,7 +19,7 @@
        it "adds a down-vote to the post" do
          post = vote_presteps
          expect {
-           post( :down_vote, post_id: @post.id )
+           post( :down_vote, topic_post: @post.id )
          }.to change{ @post.down_votes }.by 1
        end
    end
