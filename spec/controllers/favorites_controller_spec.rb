@@ -15,7 +15,7 @@ require 'rails_helper'
       it "creates a favorite for the current user and specified post" do
         expect( @user.favorites.find_by_post_id(@post.id) ).to be_nil
 
-        post :create, { post_id: @post.id }
+        post :create, { post_id: @post.id, topic_id: @post.topic_id}
 
         expect( @user.favorites.find_by_post_id(@post.id) ).not_to be_nil
       end
@@ -26,7 +26,7 @@ require 'rails_helper'
         favorite = @user.favorites.where(post: @post).create
         expect( @user.favorites.find_by_post_id(@post.id) ).not_to be_nil
 
-        delete :destroy, { post_id: @post.id, id: favorite.id }
+        delete :destroy, { post_id: @post.id, topic_id: @post.topic_id, id: favorite.id }
 
         expect( @user.favorites.find_by_post_id(@post.id) ).to be_nil
       end

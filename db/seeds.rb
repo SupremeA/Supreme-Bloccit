@@ -36,11 +36,8 @@ topics = Topic.all
   post.update_rank
 end
 
+posts = Post.all
 #create comments
-Comment.create!(
-user: users.sample,
-body: Faker::Lorem.sentence
-)
 
 posts = Post.all
 400.times do
