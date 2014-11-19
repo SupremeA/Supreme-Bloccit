@@ -6,17 +6,17 @@ describe "Sign in flow" do
 
   describe "successful" do
     it "redirects to the topics index" do
-      user - authenticated_user
+      user = authenticated_user
       visit root_path
 
-  within '.user-info' do
-      click_link 'Sign In'
+  within '.jumbotron' do
+      click_link 'Sign In Here!'
     end
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
 
       within 'form' do
-        click_button 'Sign in'
+        click_link 'Sign in'
       end
 
       expect(current_path).to eq topics_path

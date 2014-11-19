@@ -10,7 +10,7 @@
      it "adds an up-vote to the post" do
        post = vote_presteps
        expect {
-         post( :up_vote, post_id: @post.id )
+         post( :up_vote, post_id: @post.id, topic_id: @post.topic_id )
        }.to change{ @post.up_votes }.by 1
      end
    end
@@ -19,7 +19,7 @@
        it "adds a down-vote to the post" do
          post = vote_presteps
          expect {
-           post( :down_vote, topic_post: @post.id )
+           post( :down_vote, post_id: @post.id, topic_id: @post.topic_id )
          }.to change{ @post.down_votes }.by 1
        end
    end

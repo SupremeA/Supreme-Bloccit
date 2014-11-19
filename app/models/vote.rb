@@ -7,6 +7,14 @@ belongs_to :post
 #  validates :string, (+1 || -1)
 validates :value, inclusion: { in: [-1, 1], message: "%{value} is not a valid vote." }
 
+  def up_vote?
+    value == 1
+  end
+
+  def down_vote?
+    value == -1
+  end
+
 after_save :update_post
 
 private
