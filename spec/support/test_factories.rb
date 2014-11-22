@@ -24,4 +24,8 @@ module TestFactories
     @post = associated_post
     sign_in @user
   end
+
+  def comment_without_email
+     
+  end
 end
