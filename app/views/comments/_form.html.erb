@@ -1,6 +1,6 @@
 <% if current_user %>
 <h4> Give us your thoughts!</h4>
-  <%= form_for [@topic, @post, comment] do |f| %>
+  <%= form_for [@post, comment] do |f| %>
       <%= f.label :body %>
       <%= f.text_field :body, rows: 2, class: 'form-control', placeholder: "Enter comment" %>
       <%= f.submit %>

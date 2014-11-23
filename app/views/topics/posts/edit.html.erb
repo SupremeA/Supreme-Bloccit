@@ -1,0 +1,16 @@
+<h1>Edit Post</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Once again here are the rules!</p>
+    <ul>
+      <li>Like I said before, make sure the it rhymes.</li>
+      <li>Don't mess with the letter "A".</li>
+      <li>This is a NO HASHTAG ZONE, using them will get you banned for LIFE!</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= render partial: 'form', locals: { topic: @topic, post: @post } %>
+
+  </div>
+</div>
