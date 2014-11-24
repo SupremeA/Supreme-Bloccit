@@ -2,8 +2,6 @@ require 'rails_helper'
 
   describe User do
 
-    include TestFactories
-
     describe ".top_rated" do
 
       before do
