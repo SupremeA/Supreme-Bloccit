@@ -9,6 +9,9 @@ group :test do
   gem 'capybara'
 end
 
+# Analytics heroku software
+gem 'newrelic_rpm'
+
 # Use sqlite3 as the database for Active Record
 group :production do
   gem 'pg'
