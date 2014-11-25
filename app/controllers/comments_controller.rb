@@ -3,13 +3,24 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(params_comment)
-    @comment.user_id = current_user.id
+    @comment = @post.comments
+
+    @comment = current_user.comments.build( params_comment )
+    @comment.post = @post
+    @new_comment = Comment.new
+
+    authorize @comment
+
     if @comment.save
-      redirect_to [@post.topic, @post], notice: "Your comment was saved! Awesome!"
+      flash[:notice] = "Your comment was saved! Awesome!"
     else
-      redirect_to [@post.topic, @post], notice: "Your comment didnt save"
+      flash[:error] = "Your comment didn't save"
   end
+
+  respond_with(@comment) do |format|
+    format.html { redirect_to [@post.topic, @post] }
+  end
+end
 
   def destroy
     @post = Post.find(params[:post_id])
@@ -34,6 +45,4 @@ private
 
  def params_comment
    params.require(:comment).permit(:body)
- end
-
  end
